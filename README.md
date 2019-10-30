@@ -29,29 +29,28 @@ Things you may want to cover:
 |name|string|null:false, add_index|
 |email|string|null:false|
 |password|string|null:false|
-|group_users_id|integer|
 
 ### Association
 - has_many :group through : groups_users
 - has_many :messages
+- has_many :groups_users
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, add_index|
-|groups_users_id|integer|foreign_key: true|
 
 ### Association
 - has_many :user through : groups_users
 - has_many :messages
-
+- has_many :groups_users
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null:false|
+|body|text|
 |image|string|
 |group_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
